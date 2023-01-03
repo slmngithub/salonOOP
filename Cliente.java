@@ -10,11 +10,10 @@ public class Cliente {
         this.tipo=tipo;
 
     }
-    public void Cliente( String nombre , String DNI , boolean EsSocio){
+    public void Cliente( String nombre , String DNI){
 
         this.nombre=nombre;
         this.DNI=DNI;
-        this.EsSocio=EsSocio;
         EsSocio=false;
 
     }
@@ -23,7 +22,7 @@ public class Cliente {
         this.nombre=nombre;
     }
     /*get name*/
-    public  String getnombre(String nombre){
+    public  String getnombre(){
         return nombre;
     }
     /* set DNI*/
@@ -31,7 +30,7 @@ public class Cliente {
         this.DNI=DNI;
     }
     /*get DNI*/
-    public  String getDNI(String DNI){
+    public  String getDNI(){
         return DNI;
     }
     /*set es socio*/
@@ -39,7 +38,7 @@ public class Cliente {
         this.EsSocio=EsSocio;
     }
     /*get es socio*/
-    public String getEsSocio(boolean EsSocio){
+    public String getEsSocio(){
         if (EsSocio== true) {return "Es Socio";}
         else return "No Es Socio";
     }
@@ -48,7 +47,30 @@ public class Cliente {
         this.tipo=tipo;
     }
     /*get type*/
-    public  String gettipo(String tipo){
+    public  String gettipo(){
         return tipo;
+    }
+    /*get Descuento()*/
+    public String getDescuento(){
+        String Descuento = "";
+        if (EsSocio==true){
+            if (tipo=="Platino" || tipo=="platino"){
+                Descuento="su descuento es 10%";
+            } else if (tipo=="Oro" || tipo=="oro") {
+                Descuento="su descuento es 15%";
+            } else if (tipo=="Premium" || tipo=="premium") {
+                Descuento="su descuento es 12%";
+            }
+        }
+        else Descuento="0";
+        return Descuento;
+
+    }
+    public void tostring(){
+
+        System.out.println("El nombre del cliente es : " + getnombre());
+        System.out.println("El DNI del cliente es : " + getDNI());
+        System.out.println("El cliente " + getEsSocio());
+        System.out.println("El tipo del cliente es : " + gettipo());
     }
 }
