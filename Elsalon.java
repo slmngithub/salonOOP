@@ -37,7 +37,7 @@ public class Elsalon {
                 c.settipo("0");
                 break;
             }
-            else {System.out.println("este cliente no es cliente de nuestro salon");}
+
 
         }
     }
@@ -47,7 +47,7 @@ public class Elsalon {
                 c.settipo(nuevotipo);
                 break;
             }
-            else System.out.println("este cliente no es socio");
+
 
         }
     }
@@ -61,7 +61,7 @@ public class Elsalon {
                     numVisitas++;
                     break;
                 }
-                else System.out.println("no hay mas visitas");
+
 
             }
         }
