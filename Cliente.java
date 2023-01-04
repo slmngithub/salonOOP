@@ -38,9 +38,8 @@ public class Cliente {
         this.EsSocio=EsSocio;
     }
     /*get es socio*/
-    public String getEsSocio(){
-        if (EsSocio== true) {return "Es Socio";}
-        else return "No Es Socio";
+    public boolean getEsSocio(){
+          return EsSocio;
     }
     /*set type*/
     public void settipo(String tipo){
@@ -59,18 +58,16 @@ public class Cliente {
             } else if (tipo=="Oro" || tipo=="oro") {
                 Descuento="su descuento es 15%";
             } else if (tipo=="Premium" || tipo=="premium") {
-                Descuento="su descuento es 12%";
+                Descuento="su descuento es 20%";
             }
         }
         else Descuento="0";
         return Descuento;
 
     }
-    public void tostring(){
+    public  String toString(){
 
-        System.out.println("El nombre del cliente es : " + getnombre());
-        System.out.println("El DNI del cliente es : " + getDNI());
-        System.out.println("El cliente " + getEsSocio());
-        System.out.println("El tipo del cliente es : " + gettipo());
+        return String.format("El nombre del cliente es : " + getnombre() + "\n" +"El DNI del cliente es : " + getDNI() + "\n" + "El cliente ES SOCIO ? " + getEsSocio() + "\n" +  "El tipo del cliente es : " + gettipo() );
+
     }
 }
